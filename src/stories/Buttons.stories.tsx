@@ -7,11 +7,17 @@ const meta: Meta<typeof Button> = {
   parameters: {
     layout: "centered",
   },
-  render: () => <Button>This is my button text</Button>,
+  render: (args) => <Button {...args}>This is my button text</Button>,
 };
 
 export default meta;
 
 type Story = StoryObj<typeof Button>;
 
-export const Default: Story = {};
+export const Default: Story = {
+  args: {
+    disabled: false,
+    isFullWidth: false,
+    size: "small",
+  },
+};
